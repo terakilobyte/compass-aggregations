@@ -8,7 +8,8 @@ const STAGE_OPERATORS = [
     label: '$addFields',
     score: 1,
     meta: 'stage',
-    version: '3.4.0'
+    version: '3.4.0',
+    snippet: 'function ${1?:function_name}(${2:argument}) {\n\t\t${3:...}\n}'
   },
   {
     name: '$bucket',
@@ -16,7 +17,8 @@ const STAGE_OPERATORS = [
     label: '$bucket',
     score: 1,
     meta: 'stage',
-    version: '3.4.0'
+    version: '3.4.0',
+    snippet: '{\n  groupBy: ${1:expr},\n  boundaries: [ ${2:boundaries} ],\n  default: ${3},\n  output: {\n     ${4}: { ${5} },\n}\n  }\n}'
   },
   {
     name: '$bucketAuto',
@@ -24,16 +26,17 @@ const STAGE_OPERATORS = [
     label: '$bucketAuto',
     score: 1,
     meta: 'stage',
-    version: '3.4.0'
+    version: '3.4.0',
+    snippet: ''
   },
   {
     name: '$collStats',
     value: '$collStats',
     label: '$collStats',
-    snippet: '{\n  latencyStats: {\n    histograms: true\n  },\n  storageStats: {}\n}',
     score: 1,
     meta: 'stage',
-    version: '3.4.0'
+    version: '3.4.0',
+    snippet: '{\n  latencyStats: {\n    histograms: true\n  },\n  storageStats: {}\n}'
   },
   {
     name: '$count',
@@ -41,7 +44,8 @@ const STAGE_OPERATORS = [
     label: '$count',
     score: 1,
     meta: 'stage',
-    version: '2.2.0'
+    version: '2.2.0',
+    snippet: ''
   },
   {
     name: '$currentOp',
@@ -49,7 +53,8 @@ const STAGE_OPERATORS = [
     label: '$currentOp',
     score: 1,
     meta: 'stage',
-    version: '3.6.0'
+    version: '3.6.0',
+    snippet: ''
   },
   {
     name: '$facet',
@@ -57,7 +62,8 @@ const STAGE_OPERATORS = [
     label: '$facet',
     score: 1,
     meta: 'stage',
-    version: '3.4.0'
+    version: '3.4.0',
+    snippet: ''
   },
   {
     name: '$geoNear',
@@ -65,7 +71,8 @@ const STAGE_OPERATORS = [
     label: '$geoNear',
     score: 1,
     meta: 'stage',
-    version: '2.4.0'
+    version: '2.4.0',
+    snippet: ''
   },
   {
     name: '$graphLookup',
@@ -73,7 +80,8 @@ const STAGE_OPERATORS = [
     label: '$graphLookup',
     score: 1,
     meta: 'stage',
-    version: '3.4.0'
+    version: '3.4.0',
+    snippet: ''
   },
   {
     name: '$group',
@@ -81,7 +89,8 @@ const STAGE_OPERATORS = [
     label: '$group',
     score: 1,
     meta: 'stage',
-    version: '2.2.0'
+    version: '2.2.0',
+    snippet: ''
   },
   {
     name: '$indexStats',
@@ -89,7 +98,8 @@ const STAGE_OPERATORS = [
     label: '$indexStats',
     score: 1,
     meta: 'stage',
-    version: '3.2.0'
+    version: '3.2.0',
+    snippet: ''
   },
   {
     name: '$limit',
@@ -97,7 +107,8 @@ const STAGE_OPERATORS = [
     label: '$limit',
     score: 1,
     meta: 'stage',
-    version: '2.2.0'
+    version: '2.2.0',
+    snippet: ''
   },
   {
     name: '$listLocalSessions',
@@ -105,7 +116,8 @@ const STAGE_OPERATORS = [
     label: '$listLocalSessions',
     score: 1,
     meta: 'stage',
-    version: '3.6.0'
+    version: '3.6.0',
+    snippet: ''
   },
   {
     name: '$listSessions',
@@ -113,7 +125,8 @@ const STAGE_OPERATORS = [
     label: '$listSessions',
     score: 1,
     meta: 'stage',
-    version: '3.6.0'
+    version: '3.6.0',
+    snippet: ''
   },
   {
     name: '$lookup',
@@ -121,7 +134,8 @@ const STAGE_OPERATORS = [
     label: '$lookup',
     score: 1,
     meta: 'stage',
-    version: '3.2.0'
+    version: '3.2.0',
+    snippet: ''
   },
   {
     name: '$match',
@@ -129,7 +143,8 @@ const STAGE_OPERATORS = [
     label: '$match',
     score: 1,
     meta: 'stage',
-    version: '2.2.0'
+    version: '2.2.0',
+    snippet: ''
   },
   {
     name: '$out',
@@ -137,7 +152,8 @@ const STAGE_OPERATORS = [
     label: '$out',
     score: 1,
     meta: 'stage',
-    version: '2.2.0'
+    version: '2.2.0',
+    snippet: ''
   },
   {
     name: '$project',
@@ -145,7 +161,8 @@ const STAGE_OPERATORS = [
     label: '$project',
     score: 1,
     meta: 'stage',
-    version: '2.2.0'
+    version: '2.2.0',
+    snippet: ''
   },
   {
     name: '$redact',
@@ -153,7 +170,8 @@ const STAGE_OPERATORS = [
     label: '$redact',
     score: 1,
     meta: 'stage',
-    version: '2.6.0'
+    version: '2.6.0',
+    snippet: ''
   },
   {
     name: '$replaceRoot',
@@ -161,7 +179,8 @@ const STAGE_OPERATORS = [
     label: '$replaceRoot',
     score: 1,
     meta: 'stage',
-    version: '3.4.0'
+    version: '3.4.0',
+    snippet: ''
   },
   {
     name: '$sample',
@@ -169,7 +188,8 @@ const STAGE_OPERATORS = [
     label: '$sample',
     score: 1,
     meta: 'stage',
-    version: '3.2.0'
+    version: '3.2.0',
+    snippet: ''
   },
   {
     name: '$skip',
@@ -177,7 +197,8 @@ const STAGE_OPERATORS = [
     label: '$skip',
     score: 1,
     meta: 'stage',
-    version: '2.2.0'
+    version: '2.2.0',
+    snippet: ''
   },
   {
     name: '$sort',
@@ -185,7 +206,8 @@ const STAGE_OPERATORS = [
     label: '$sort',
     score: 1,
     meta: 'stage',
-    version: '2.2.0'
+    version: '2.2.0',
+    snippet: ''
   },
   {
     name: '$sortByCount',
@@ -193,7 +215,8 @@ const STAGE_OPERATORS = [
     label: '$sortByCount',
     score: 1,
     meta: 'stage',
-    version: '3.4.0'
+    version: '3.4.0',
+    snippet: ''
   },
   {
     name: '$unwind',
@@ -201,7 +224,8 @@ const STAGE_OPERATORS = [
     label: '$unwind',
     score: 1,
     meta: 'stage',
-    version: '2.2.0'
+    version: '2.2.0',
+    snippet: ''
   }
 ];
 
