@@ -49,6 +49,16 @@ class StageEditor extends PureComponent {
     tools.setCompleters([ this.completer ]);
   }
 
+  shouldComponentUpdate(nextProps) {
+    if (this.props.stage.stageOperator !== nextProps.stage.stageOperator && this.editor) {
+      this.editor.setValue('');
+      this.editor.insertSnippet(nextProps.stage.snippet);
+      this.editor.focus();
+      return false;
+    }
+    return true;
+  }
+
   /**
    * Need to decorate the change event with the stage index before
    * dispatching.
@@ -75,7 +85,11 @@ class StageEditor extends PureComponent {
           onChange={this.onStageChange}
           editorProps={{ $blockScrolling: Infinity }}
           name={`aggregations-stage-editor-${this.props.index}`}
-          setOptions={OPTIONS} />
+          setOptions={OPTIONS}
+          onLoad={(editor) => {
+            this.editor = editor;
+          }}
+        />
       </div>
     );
   }
