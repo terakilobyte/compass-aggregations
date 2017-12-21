@@ -49,14 +49,12 @@ class StageEditor extends PureComponent {
     tools.setCompleters([ this.completer ]);
   }
 
-  shouldComponentUpdate(nextProps) {
-    if (this.props.stage.stageOperator !== nextProps.stage.stageOperator && this.editor) {
+  componentDidUpdate(prevProps) {
+    if (this.props.stage.stageOperator !== prevProps.stage.stageOperator && this.editor) {
       this.editor.setValue('');
-      this.editor.insertSnippet(nextProps.stage.snippet);
+      this.editor.insertSnippet(this.props.stage.snippet);
       this.editor.focus();
-      return false;
     }
-    return true;
   }
 
   /**
