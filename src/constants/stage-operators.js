@@ -9,6 +9,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.4.0',
+    description: 'Adds new fields to documents.',
     snippet: '{\n  ${1:field}: ${2:expr}, ${3:...}\n}'
   },
   {
@@ -18,6 +19,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.4.0',
+    description: 'Categorizes incoming documents into groups, called buckets, based on a specified expression and bucket boundaries.',
     snippet: '{\n  groupBy: ${1:expr},\n  boundaries: [ ${2:lowerbound}, ${3:...} ],\n  default: ${4:literal},\n  output: {\n     ${5:field}: { ${6:accumulator} }, ${7:...}\n  }\n}'
   },
   {
@@ -27,6 +29,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.4.0',
+    description: 'Categorizes incoming documents into a specific number of groups, called buckets, based on a specified expression. Bucket boundaries are automatically determined in an attempt to evenly distribute the documents into the specified number of buckets.',
     snippet: '{\n  groupBy: ${1:expr},\n  buckets: ${2:0},\n  output: {\n    ${3:field}: ${4:accumulator}, ${5:...}\n  },\ngranularity: \'${6}\'\n}'
   },
   {
@@ -36,6 +39,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.4.0',
+    description: 'Returns statistics regarding a collection or view.',
     snippet: '{\n  latencyStats: {\n    histograms: ${1:false}\n  },\n  storageStats: {${2:}},\n  count: {${3}}\n}'
   },
   {
@@ -45,6 +49,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.2.0',
+    description: 'Returns a count of the number of documents at this stage of the aggregation pipeline.',
     snippet: '${1:0}'
   },
   {
@@ -54,6 +59,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.6.0',
+    description: 'Returns information on active and/or dormant operations for the MongoDB deployment.',
     snippet: '{\n  allUsers: ${1:false},\n  idleConnections: ${2:false}\n}'
   },
   {
@@ -63,6 +69,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.4.0',
+    description: 'Processes multiple aggregation pipelines within a single stage on the same set of input documents.',
     snippet: '{\n  ${1:field}: [ ${2:stage}, ${3:...} ], ${4:...}\n}'
   },
   {
@@ -72,6 +79,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.4.0',
+    description: 'Returns an ordered stream of documents based on the proximity to a geospatial point.',
     snippet: '{\n  ${1:geoNear options}\n}'
   },
   {
@@ -81,6 +89,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.4.0',
+    description: 'Performs a recursive search on a collection.',
     snippet: '{\n  from: ${1:collection},\n' +
     '  startWith: ${2:expr},\n' +
     '  connectFromField: \'${3}\',\n' +
@@ -97,6 +106,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.2.0',
+    description: 'Groups input documents by a specified identifier expression and applies the accumulator expression(s), if specified, to each group.',
     snippet: '{\n  _id: ${1:expr},\n  ${2:field}: {\n    ${3:accumulator}: ${4:expr}\n  }\n}'
   },
   {
@@ -106,6 +116,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.2.0',
+    description: 'Returns statistics regarding the use of each index for the collection.',
     snippet: '{\n  ${1}\n}'
   },
   {
@@ -115,6 +126,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.2.0',
+    description: 'Passes the first n documents unmodified to the pipeline where n is the specified limit.',
     snippet: '${1:1}'
   },
   {
@@ -124,6 +136,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.6.0',
+    description: 'Lists all active sessions recently in use on the currently connected mongos or mongod instance.',
     snippet: '{\n  ${1}\n}'
   },
   {
@@ -133,6 +146,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.6.0',
+    description: 'Lists all sessions that have been active long enough to propagate to the system.sessions collection.',
     snippet: '{\n  {${1}}\n}'
   },
   {
@@ -142,6 +156,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.2.0',
+    description: 'Performs a left outer join to another collection in the same database to filter in documents from the “joined” collection for processing.',
     snippet: '{\n  from: ${1:collection},\n' +
     '  localField: ${2:field},\n' +
     '  foreignField: ${3:field},\n' +
@@ -154,6 +169,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.2.0',
+    description: 'Filters the document stream to allow only matching documents to pass unmodified into the next pipeline stage.',
     snippet: '{\n  ${1:query}\n}'
   },
   {
@@ -163,6 +179,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.2.0',
+    description: 'Writes the resulting documents of the aggregation pipeline to a collection.',
     snippet: '{\n  ${1:collection}\n}'
   },
   {
@@ -172,6 +189,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.2.0',
+    description: 'Reshapes each document in the stream, such as by adding new fields or removing existing fields.',
     snippet: '{\n  ${1:project specifications}\n}'
   },
   {
@@ -181,6 +199,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.6.0',
+    description: 'Reshapes each document in the stream by restricting the content for each document based on information stored in the documents themselves.',
     snippet: '{\n  ${1:expr}\n}'
   },
   {
@@ -190,6 +209,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.4.0',
+    description: 'Replaces a document with the specified embedded document.',
     snippet: '{\n  newRoot: {${1}}\n}'
   },
   {
@@ -199,6 +219,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.2.0',
+    description: 'Randomly selects the specified number of documents from its input.',
     snippet: '{\n  size: ${1:1}\n}'
   },
   {
@@ -208,6 +229,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.2.0',
+    description: 'Skips the first n documents where n is the specified skip number and passes the remaining documents unmodified to the pipeline.',
     snippet: '{\n  ${1}\n}'
   },
   {
@@ -217,6 +239,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.2.0',
+    description: 'Reorders the document stream by a specified sort key.',
     snippet: '{\n  ${1:field}: ${2:1}, ${3:...}\n}'
   },
   {
@@ -226,6 +249,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '3.4.0',
+    description: 'Groups incoming documents based on the value of a specified expression, then computes the count of documents in each distinct group.',
     snippet: '{\n  ${1:expr}\n}'
   },
   {
@@ -235,6 +259,7 @@ const STAGE_OPERATORS = [
     score: 1,
     meta: 'stage',
     version: '2.2.0',
+    description: 'Deconstructs an array field from the input documents to output a document for each element.',
     snippet: '{\n  path: ${1:field path},\n' +
     '  includeArrayIndex: \'${2}\',\n' +
     '  preserveNullAndEmptyArrays: ${3:false}\n}'
