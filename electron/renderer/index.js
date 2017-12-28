@@ -82,7 +82,7 @@ appRegistry.emit('collection-changed', 'compassAggregations.myCollection');
 // }
 // appRegistry.emit('query-applied', query);
 
-const docs = [{ _id: 1, name: 'Aphex Twin', loc: 'London' }];
+const docs = [{ _id: 1, name: 'Aphex Twin', loc: 'London', members: 1, newestAlbum: 'Cheetah' }];
 FieldStore.processDocuments(docs);
 
 if (module.hot) {

@@ -37,8 +37,8 @@ describe('Aggregation Store', () => {
 
       it('updates the namespace in the store', () => {
         expect(store.getState().fields).to.deep.equal([
-          { name: '_id', value: '_id', score: 1, meta: 'field' },
-          { name: 'name', value: 'name', score: 1, meta: 'field' }
+          { name: '_id', value: '_id', score: 1, meta: 'field', version: '0.0.0' },
+          { name: 'name', value: 'name', score: 1, meta: 'field', version: '0.0.0' }
         ]);
       });
     });

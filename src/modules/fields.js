@@ -17,7 +17,13 @@ const INITIAL_STATE = [];
  */
 const process = (fields) => {
   return Object.keys(fields).map((key) => {
-    return { name: key, value: key, score: 1, meta: 'field' };
+    return {
+      name: key,
+      value: key,
+      score: 1,
+      meta: 'field',
+      version: '0.0.0'
+    };
   });
 };
 
