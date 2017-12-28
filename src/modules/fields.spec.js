@@ -15,7 +15,7 @@ describe('server version module', () => {
   describe('#reducer', () => {
     context('when the action is not fields changed', () => {
       it('returns the default state', () => {
-        expect(reducer(undefined, { type: 'test' })).to.deep.equal({});
+        expect(reducer(undefined, { type: 'test' })).to.deep.equal([]);
       });
     });
 
@@ -23,7 +23,10 @@ describe('server version module', () => {
       const fields = { _id: { type: 'ObjectId' }, name: { type: 'String' }};
 
       it('returns the new state', () => {
-        expect(reducer(undefined, fieldsChanged(fields))).to.deep.equal(fields);
+        expect(reducer(undefined, fieldsChanged(fields))).to.deep.equal([
+          { name: '_id', value: '_id', score: 1, meta: 'field' },
+          { name: 'name', value: 'name', score: 1, meta: 'field' }
+        ]);
       });
     });
   });

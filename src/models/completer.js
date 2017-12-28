@@ -48,16 +48,18 @@ class Completer {
   }
 
   /**
-   * Instantiate a new completer with the current server version.
+   * Instantiate a new completer.
    *
    * @param {String} version - The version.
    * @param {TextCompleter} textCompleter - The fallback Ace text completer.
    * @param {Number} index - The stage index.
+   * @param {Array} fields - The collection fields.
    */
-  constructor(version, textCompleter, index) {
+  constructor(version, textCompleter, index, fields) {
     this.version = version;
     this.textCompleter = textCompleter;
     this.index = index;
+    this.fields = fields;
   }
 
   /**

@@ -26,7 +26,7 @@ describe('Aggregation Store', () => {
     context('when the fields change', () => {
       const appRegistry = new AppRegistry();
       const docs = [
-        { _id: 1, name: 'Aphex Twin', loc: 'London' }
+        { _id: 1, name: 'Aphex Twin' }
       ];
 
       before(() => {
@@ -36,8 +36,9 @@ describe('Aggregation Store', () => {
       });
 
       it('updates the namespace in the store', () => {
-        expect(Object.keys(store.getState().fields)).to.have.all.members([
-          '_id', 'name', 'loc'
+        expect(store.getState().fields).to.deep.equal([
+          { name: '_id', value: '_id', score: 1, meta: 'field' },
+          { name: 'name', value: 'name', score: 1, meta: 'field' }
         ]);
       });
     });
