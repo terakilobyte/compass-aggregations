@@ -1,3 +1,8 @@
+import { INITIAL_STATE as VIEW_INITIAL_STATE } from './view';
+import { INITIAL_STATE as FIELDS_INITIAL_STATE } from './fields';
+import { INITIAL_STATE as SV_INITIAL_STATE } from './server-version';
+import { INITIAL_STATE as STAGE_INITIAL_STATE } from './stages';
+
 /**
  * Namespace changed action.
  */
@@ -18,6 +23,17 @@ const INITIAL_STATE = '';
  */
 export default function reducer(state = INITIAL_STATE, action) {
   if (action.type === NAMESPACE_CHANGED) {
+    // Set the rest of the state here
+    const toret = {
+      namespace: action.namespace,
+      fields: FIELDS_INITIAL_STATE,
+      serverVersion: SV_INITIAL_STATE,
+      stages: [
+        STAGE_INITIAL_STATE
+      ],
+      view: VIEW_INITIAL_STATE
+    };
+
     return action.namespace;
   }
   return state;
