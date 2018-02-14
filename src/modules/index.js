@@ -8,6 +8,7 @@ import serverVersion, { INITIAL_STATE as SV_INITIAL_STATE } from './server-versi
 import pipeline, { INITIAL_STATE as PIPELINE_INITIAL_STATE } from './pipeline';
 import savedPipelines, { INITIAL_STATE as SP_INITIAL_STATE } from './saved-pipelines';
 import view, { INITIAL_STATE as VIEW_INITIAL_STATE } from './view';
+// import stage from './stage';
 
 /**
  * The intial state of the root reducer.
@@ -51,6 +52,7 @@ const appReducer = combineReducers({
   serverVersion,
   savedPipelines,
   pipeline,
+  // stage,
   view
 });
 

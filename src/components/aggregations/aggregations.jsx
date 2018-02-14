@@ -12,13 +12,14 @@ import { viewChanged } from 'modules/view';
 import { copyToClipboard } from 'modules/clipboard';
 import {
   stageAdded,
+  stageDeleted,
+  stageMoved } from 'modules/pipeline';
+import {
   stageChanged,
   stageCollapseToggled,
-  stageDeleted,
-  stageMoved,
   stageOperatorSelected,
   stageToggled
-} from 'modules/pipeline';
+} from 'modules/stage';
 import {
   closeSavedPipelines,
   openSavedPipelines

@@ -4,9 +4,10 @@ import store from 'stores';
 import {
   stageChanged,
   stageCollapseToggled,
-  stageDeleted,
-  stageAdded,
   stageToggled } from 'modules/pipeline';
+import {
+  stageDeleted,
+  stageAdded } from 'modules/stage';
 import { reset, INITIAL_STATE } from '../modules/index';
 
 describe('Aggregation Store', () => {
