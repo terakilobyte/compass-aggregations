@@ -126,24 +126,24 @@ describe('Stage module', () => {
        NumberInt is just not implemented in query-parser
     */
     it('handles Timestamp', () => {
-      const stage = {
-        id: 0, isEnabled: true, isExpanded: true, isValid: true, snippet: '',
-        stageOperator: '$match',
-        stage: '"{\n' +
-        '  ts: Timestamp(100)\n' +
-        '}"'
-      };
+      // const stage = {
+      //   id: 0, isEnabled: true, isExpanded: true, isValid: true, snippet: '',
+      //   stageOperator: '$match',
+      //   stage: '"{\n' +
+      //   '  ts: Timestamp(100)\n' +
+      //   '}"'
+      // };
       // expect(generateStage(stage)).to.deep.equal({
       //   '$match': {ts: bson.Timestamp(100)}
       // });
     });
 
     it('handles NumberInt', () => {
-      const stage = {
-        id: 0, isEnabled: true, isExpanded: true, isValid: true, snippet: '',
-        stageOperator: '$match',
-        stage: '{\n  ni: NumberInt(1)\n}'
-      };
+      // const stage = {
+      //   id: 0, isEnabled: true, isExpanded: true, isValid: true, snippet: '',
+      //   stageOperator: '$match',
+      //   stage: '{\n  ni: NumberInt(1)\n}'
+      // };
       // expect(generateStage(stage)).to.deep.equal({ni: 1});
     });
   });

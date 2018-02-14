@@ -19,7 +19,6 @@ export const INITIAL_STATE = {
   namespace: NS_INITIAL_STATE,
   serverVersion: SV_INITIAL_STATE,
   pipeline: PIPELINE_INITIAL_STATE,
-  stages: STAGE_INITIAL_STATE,
   savedPipelines: SP_INITIAL_STATE,
   view: VIEW_INITIAL_STATE
 };
@@ -66,7 +65,7 @@ export const savedState = (state = INITIAL_STATE) => {
     , { inputDocuments: state.inputDocuments }
     , { savedPipelines: state.savedPipelines }
     , { namespace: state.namespace }
-    , { stages: state.stages }
+    , { pipeline: state.pipeline }
     , { view: state.view }
   );
 };
@@ -85,7 +84,7 @@ export const restoredState = (state = INITIAL_STATE, stateId) => {
     inputDocuments: {},
     savedPipelines: {},
     namespace: {},
-    stages: {},
+    pipeline: {},
     view: '',
     stateId: stateId
   };
